@@ -24,10 +24,12 @@ function incrementarPorUno(array) {
   // Aumenta cada entero por 1
   // y devuelve el array
   // Tu código:
-  array.forEach(element => {
-    return element + 1
+ var nuevoArray = [];
+  for(var i = 0; i < array.length; i++) {
+    nuevoArray[i] = array[i] + 1;
+  }
 
-  });
+  return nuevoArray;
 }
 
 function agregarItemAlFinalDelArray(array, elemento) {
@@ -72,11 +74,12 @@ function agregarNumeros(numeros) {
   // "array" debe ser una matriz de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
-  let aux = 0;
-  for (let i = 0; i < numeros.length; i++) {
-    aux += numeros[i];
+ var suma = 0;
+  for(var i = 0; i < numeros.length; i++) {
+    suma = suma + numeros[i];
   }
-  return aux;
+  return suma;
+
 
 }
 
@@ -84,11 +87,7 @@ function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
-  for (let i = 0; i < resultadosTest.length; i++) {
-    resultadosTest += resultadosTest[i];
-
-  }
-  return resultadosTest / resultadosTest.length
+   return agregarNumeros(resultadosTest) / resultadosTest.length;
 }
 
 function numeroMasGrande(numeros) {
@@ -103,17 +102,12 @@ function multiplicarArgumentos() {
   // Si no se pasan argumentos devuelve 0
   // Si se pasa un argumento, simplemente devuélvelo
   // Tu código:
-  let count
-  if (arguments > 1) {
-    for (let i = 1; i < arguments.length; i++) {
-      count *= arguments
-    }
-    return count
-  } else if (!arguments) {
-    return 0
-  } else {
-    return arguments
+  if(arguments.length < 1) return 0;
+  var total = 1;
+  for(var i = 0; i < arguments.length; i++) {
+    total = total * arguments[i];
   }
+  return total;
 }
 
 // No modificar nada debajo de esta línea
